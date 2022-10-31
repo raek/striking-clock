@@ -1,0 +1,7 @@
+[Unit]
+Description=Striking Clock
+
+[Service]
+Type=oneshot
+Environment="PYTHONUNBUFFERED=1"
+ExecStart=%h/.local/bin/striking-clock

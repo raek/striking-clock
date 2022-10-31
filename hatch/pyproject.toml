@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "striking_clock"
+version = "1.0.0"
+description = "A service that goes BONG! BONG! BONG! every hour."
+readme = "README.md"
+authors = [{name = "Rasmus Bondesson", email = "raek@raek.se"}]
+license = {file = "LICENSE"}
+classifiers = ["License :: OSI Approved :: MIT License"]
+requires-python = ">=3.5, <4"
+dependencies = [
+    "appdirs",
+]
+
+[project.urls]
+Home = "https://github.com/raek/striking-clock/"
+
+[project.scripts]
+striking-clock = "striking_clock:main"
+
+[tool.hatch.build.targets.wheel.shared-data]
+"striking-clock.service" = "share/systemd/user/striking-clock.service"
+"striking-clock.timer" = "share/systemd/user/striking-clock.timer"
